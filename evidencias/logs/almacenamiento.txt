@@ -1,0 +1,2 @@
+2288319  6864957  /user/hive/superstore_edson/raw
+428503   1285509  /opt/hive/data/warehouse/superstore_edson.db/ventas

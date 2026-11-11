@@ -1,0 +1,68 @@
+﻿col_name	data_type	comment
+row_id	int	
+order_id	string	
+order_date	date	
+ship_date	date	
+ship_mode	string	
+customer_id	string	
+customer_name	string	
+segment	string	
+country	string	
+city	string	
+state	string	
+postal_code	string	
+region	string	
+product_id	string	
+category	string	
+sub_category	string	
+product_name	string	
+sales	decimal(18,4)	
+quantity	int	
+discount	decimal(5,4)	
+profit	decimal(18,4)	
+	NULL	NULL
+# Detailed Table Information	NULL	NULL
+Database:           	superstore_edson    	NULL
+OwnerType:          	USER                	NULL
+Owner:              	hive                	NULL
+CreateTime:         	Wed Nov 11 13:07:41 UTC 2026	NULL
+LastAccessTime:     	UNKNOWN             	NULL
+Retention:          	0                   	NULL
+Location:           	hdfs://namenode:8020/opt/hive/data/warehouse/superstore_edson.db/ventas	NULL
+Table Type:         	EXTERNAL_TABLE      	NULL
+Table Parameters:	NULL	NULL
+	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\",\"COLUMN_STATS\":{\"category\":\"true\",\"city\":\"true\",\"country\":\"true\",\"customer_id\":\"true\",\"customer_name\":\"true\",\"discount\":\"true\",\"order_date\":\"true\",\"order_id\":\"true\",\"postal_code\":\"true\",\"product_id\":\"true\",\"product_name\":\"true\",\"profit\":\"true\",\"quantity\":\"true\",\"region\":\"true\",\"row_id\":\"true\",\"sales\":\"true\",\"segment\":\"true\",\"ship_date\":\"true\",\"ship_mode\":\"true\",\"state\":\"true\",\"sub_category\":\"true\"}}
+	EXTERNAL            	TRUE                
+	TRANSLATED_TO_EXTERNAL	TRUE                
+	bucketing_version   	2                   
+	external.table.purge	TRUE                
+	numFiles            	1                   
+	numRows             	9994                
+	parquet.compression 	SNAPPY              
+	rawDataSize         	629968              
+	totalSize           	428503              
+	transient_lastDdlTime	1794403935          
+	NULL	NULL
+# Storage Information	NULL	NULL
+SerDe Library:      	org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe	NULL
+InputFormat:        	org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat	NULL
+OutputFormat:       	org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat	NULL
+Compressed:         	No                  	NULL
+Num Buckets:        	-1                  	NULL
+Bucket Columns:     	[]                  	NULL
+Sort Columns:       	[]                  	NULL
+Storage Desc Params:	NULL	NULL
+	serialization.format	1                   
+capa	registros
+parquet	9994
+raw	9994
+fecha_inicial	fecha_final	ventas	ganancia
+2014-01-03	2017-12-30	2297200.8603	286397.0217
+control_carga
+NULL
+row_id	order_date	product_name	sales	profit
+1	2016-11-08	Bush Somerset Collection Bookcase	261.9600	41.9136
+2	2016-11-08	Hon Deluxe Fabric Upholstered Stacking Chairs, Rounded Back	731.9400	219.5820
+3	2016-06-12	Self-Adhesive Address Labels for Typewriters by Universal	14.6200	6.8714
+4	2015-10-11	Bretford CR4500 Series Slim Rectangular Table	957.5775	-383.0310
+5	2015-10-11	Eldon Fold 'N Roll Cart System	22.3680	2.5164

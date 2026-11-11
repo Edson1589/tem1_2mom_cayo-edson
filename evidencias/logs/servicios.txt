@@ -1,0 +1,7 @@
+NAME                                    IMAGE                 COMMAND                  SERVICE          CREATED          STATUS                    PORTS
+tem1_2mom_cayo-edson-datanode-1         apache/hadoop:3.4.1   "/usr/local/bin/dumb…"   datanode         34 minutes ago   Up 34 minutes             0.0.0.0:9864->9864/tcp, [::]:9864->9864/tcp
+tem1_2mom_cayo-edson-hive-metastore-1   apache/hive:4.0.1     "sh -c /entrypoint.sh"   hive-metastore   34 minutes ago   Up 34 minutes             0.0.0.0:9083->9083/tcp, [::]:9083->9083/tcp
+tem1_2mom_cayo-edson-hive-server-1      apache/hive:4.0.1     "sh -c /entrypoint.sh"   hive-server      34 minutes ago   Up 34 minutes (healthy)   0.0.0.0:10000->10000/tcp, [::]:10000->10000/tcp, 0.0.0.0:10002->10002/tcp, [::]:10002->10002/tcp
+tem1_2mom_cayo-edson-hue-1              gethue/hue:4.11.0     "./startup.sh"           hue              34 minutes ago   Up 33 minutes             0.0.0.0:8888->8888/tcp, [::]:8888->8888/tcp
+tem1_2mom_cayo-edson-namenode-1         apache/hadoop:3.4.1   "/usr/local/bin/dumb…"   namenode         34 minutes ago   Up 34 minutes (healthy)   0.0.0.0:8020->8020/tcp, [::]:8020->8020/tcp, 0.0.0.0:9870->9870/tcp, [::]:9870->9870/tcp
+tem1_2mom_cayo-edson-postgres-1         postgres:16-alpine    "docker-entrypoint.s…"   postgres         34 minutes ago   Up 34 minutes (healthy)   5432/tcp

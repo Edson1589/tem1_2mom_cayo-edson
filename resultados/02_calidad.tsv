@@ -1,0 +1,28 @@
+﻿r.registros	r.ordenes_unicas	r.clientes_unicos	r.fechas_nulas_o_invalidas	r.envios_anteriores	r.ventas_no_positivas	r.descuentos_fuera_rango	r.cantidades_no_positivas	d.ids_duplicados	d.filas_excedentes
+9994	5009	793	0	0	0	0	0	0	0
+campo	nulos
+category	0
+city	0
+country	0
+customer_id	0
+customer_name	0
+discount	0
+order_date	0
+order_id	0
+postal_code	0
+product_id	0
+product_name	0
+profit	0
+quantity	0
+region	0
+row_id	0
+sales	0
+segment	0
+ship_date	0
+ship_mode	0
+state	0
+sub_category	0
+pedidos_invalidos	envios_invalidos
+0	0
+productos_con_varios_nombres
+32
