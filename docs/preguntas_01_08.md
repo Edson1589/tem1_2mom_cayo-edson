@@ -16,7 +16,7 @@
 
 ![Conteo de registros en las dos tablas](../evidencias/01_Carga.png)
 
-**Resultado obtenido:** 9.994 filas en raw y Parquet; período del 03/01/2014 al 30/12/2017. Ventas: **2.297.200,8603**; ganancias: **286.397,0217**. Comprobé que no se repitiera ningún Row ID y que la cantidad de filas y los totales coincidieran con el archivo original.
+**Resultado obtenido:** 9.994 filas tanto en `ventas_raw` como en `ventas`, con fechas del 3 de enero de 2014 al 30 de diciembre de 2017. Ventas: **2.297.200,8603**; ganancias: **286.397,0217**. Comprobé que no se repitiera ningún Row ID y que la cantidad de filas y los totales coincidieran con el archivo original.
 
 **Interpretación técnica:** guardé las fechas como DATE y los importes como DECIMAL para poder calcular y comparar los resultados. Dejé una tabla para leer el CSV y otra con los datos preparados para el análisis.
 
@@ -53,7 +53,9 @@
 
 **Interpretación técnica:** no encontré errores en las comprobaciones principales. Sí encontré 32 productos con distintos nombres para un mismo ID. Por eso reuní sus ventas por ID y usé MIN para elegir un solo nombre al mostrarlos.
 
-**Tratamiento y conclusión:** utilicé todas las filas. Si aparecieran errores, los revisaría antes de corregirlos o borrar datos, sin inventar fechas ni ventas. Los valores negativos de Profit se conservan porque representan pérdidas reales dentro del archivo.
+**Tratamiento de errores:** si aparecieran errores, los revisaría antes de corregirlos o borrar datos, sin inventar fechas ni ventas. Los valores negativos de Profit se conservan porque representan pérdidas registradas en el archivo.
+
+**Conclusión:** utilicé todas las filas porque los controles principales no detectaron errores. Para los productos con varios nombres, mantuve sus ventas agrupadas por ID.
 
 ## 3. Análisis de evolución comercial por región
 
@@ -117,7 +119,7 @@ Apliqué estas reglas en orden: **Alto valor** si R, F y M son al menos 4; **En 
 
 **Estrategia:** sumé las ventas, ganancias y unidades de cada producto. Calculé su margen y lo comparé con los demás usando RANK y DENSE_RANK. También calculé la ganancia que se va sumando al recorrer la lista de cada categoría. Usé ROW_NUMBER para elegir exactamente cinco productos, ordenando por ID en caso de empate. Consideré el volumen como unidades vendidas y la menor rentabilidad como el margen porcentual más bajo.
 
-**Consulta HiveQL:** [05_productos.hql](../scripts/05_productos.hql). Genera una selección de 25 filas y el margen/ranking de los 1.862 productos.
+**Consulta HiveQL:** [05_productos.hql](../scripts/05_productos.hql). Genera una selección de 25 filas y muestra el margen y la posición de los 1.862 productos.
 
 **Evidencia:** [registro de ejecución](../evidencias/logs/05_productos.log) y [listas completas](../resultados/05_productos.tsv). Las capturas muestran los márgenes y posiciones de productos de Furniture y parte de la selección de productos con mayores ganancias y menores márgenes.
 
@@ -127,7 +129,7 @@ Apliqué estas reglas en orden: **Alto valor** si R, F y M son al menos 4; **En 
 
 **Resultado obtenido:** los líderes por ganancia son `FUR-CH-10000454` en Furniture (**1.927,44**), `OFF-BI-10003527` en Office Supplies (**7.753,04**) y `TEC-CO-10004722` en Technology (**25.199,93**, margen **40,91%**).
 
-| Cinco mayores volúmenes: Product ID | Unidades |
+| Productos con más unidades (ID) | Unidades |
 |---|---:|
 | TEC-AC-10003832 | 75 |
 | OFF-PA-10001970 | 70 |
@@ -163,7 +165,7 @@ Apliqué estas reglas en orden: **Alto valor** si R, F y M son al menos 4; **En 
 
 **Resultado obtenido:**
 
-| Rango | Filas | Ventas | Ganancia | Margen | Filas con pérdidas | No rentables | Desc. promedio |
+| Rango | Filas | Ventas | Ganancia | Margen | Filas con pérdidas | Porcentaje no rentable | Descuento promedio |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Sin descuento | 4.798 | 1.087.908,47 | 320.987,60 | 29,51% | 0 | 0,63% | 0,00% |
 | Bajo | 3.803 | 846.522,24 | 100.785,47 | 11,91% | 523 | 14,33% | 19,68% |

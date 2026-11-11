@@ -2,7 +2,7 @@
 
 **Autor:** Edson Marcelo Cayo Ali.
 
-El CSV tiene 9.994 filas y 21 columnas separadas por comas. Los textos que contienen comas están entre comillas dobles. Las fechas originales tienen el formato `M/d/yyyy` y los números usan punto decimal. Para la carga se creó una copia UTF-8 sin la fila de títulos. En `ventas_raw` todos los campos se leen como texto y en `ventas` se usan los tipos indicados abajo.
+El CSV tiene 9.994 filas y 21 columnas separadas por comas. Los textos que contienen comas están entre comillas dobles. Las fechas originales tienen el formato `M/d/yyyy` (mes/día/año) y los números usan punto decimal. Para la carga se creó una copia UTF-8 sin la fila de títulos. En `ventas_raw` todos los campos se leen como texto y en `ventas` se usan los tipos indicados abajo.
 
 | Campo original → Hive | Tipo en Hive | Descripción y regla de revisión |
 |---|---|---|

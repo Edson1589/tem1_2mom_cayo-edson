@@ -33,4 +33,4 @@ Los [controles finales](../scripts/validacion.hql) comprobaron los clientes, pro
 
 El [archivo de tiempos](../resultados/tiempos.csv) contiene la última ejecución de la consulta mensual y de los controles. Incluye conexión y guardado de resultados, por lo que no sirve para comparar directamente la velocidad de CSV y Parquet.
 
-Con 9.994 registros no fue necesario dividir la tabla en más archivos. Si el volumen aumentara, se podría evaluar separarla por año y medir varias veces la misma consulta. Las pruebas realizadas comprueban el funcionamiento en este equipo, sin medir el comportamiento de un conjunto de servidores.
+Con 9.994 registros no fue necesario separar la tabla por año. Si la cantidad de datos aumentara, se podría evaluar esa opción y medir varias veces la misma consulta. Las pruebas realizadas comprueban el funcionamiento en este equipo, sin medir el comportamiento de un conjunto de servidores.

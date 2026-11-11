@@ -66,7 +66,7 @@ Cada fila corresponde a un producto dentro de un pedido. `Sales` y `Profit` ya c
 ## Fuentes
 
 - [Dataset Superstore en Kaggle](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final).
-- [Apache Hive: CSV SerDe](https://hive.apache.org/docs/latest/user/csv-serde/), para respetar comas entre comillas y convertir columnas STRING.
+- [Apache Hive: CSV SerDe](https://hive.apache.org/docs/latest/user/csv-serde/), para leer correctamente los textos que contienen comas entre comillas.
 - [Apache Hive: funciones de ventana](https://hive.apache.org/docs/latest/language/languagemanual-windowingandanalytics/), para LAG, rankings y acumulados.
 
 ## Apoyo utilizado
